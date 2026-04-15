@@ -14,7 +14,7 @@ def post_list(request):
             new_post = Post.objects.create(
                 title=data.get('title'),
                 content=data.get('content'),
-                author=author  # Тут додаємо автора, тому що в "views.py" вказано що автор "IS NOT NULL" тобто обовʼязковий, а в нас його немає
+                author=author  # Тут додаємо автора, тому що вказано що автор "IS NOT NULL" тобто обовʼязковий, а в нас його немає
             )
             return JsonResponse({"message": "Post created!", "id": new_post.id}, status=201)
         except Exception as e:
